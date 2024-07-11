@@ -72,7 +72,7 @@ variable "image" {
     version                 = optional(string)
     publisher               = optional(string, "paloaltonetworks")
     offer                   = optional(string, "vmseries-flex")
-    sku                     = optional(string, "byol")
+    sku                     = optional(string, "bundle1")
     enable_marketplace_plan = optional(bool, true)
     custom_id               = optional(string)
   })
