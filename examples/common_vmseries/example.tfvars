@@ -1,6 +1,6 @@
 # GENERAL
 
-region              = "North Europe"
+region              = "Central US"
 resource_group_name = "transit-vnet-common"
 name_prefix         = "example-"
 tags = {
@@ -25,7 +25,7 @@ vnets = {
             direction                  = "Inbound"
             access                     = "Allow"
             protocol                   = "Tcp"
-            source_address_prefixes    = ["1.1.1.1/32"] # TODO: Whitelist public IP addresses that will be used to manage the appliances
+            source_address_prefixes    = ["0.0.0.0/0"] # TODO: Whitelist public IP addresses that will be used to manage the appliances
             source_port_range          = "*"
             destination_address_prefix = "10.0.0.0/28"
             destination_port_ranges    = ["22", "443"]
@@ -142,7 +142,7 @@ load_balancers = {
     nsg_auto_rules_settings = {
       nsg_vnet_key = "transit"
       nsg_key      = "public"
-      source_ips   = ["1.1.1.1/32"] # TODO: Whitelist public IP addresses that will be used to access LB
+      source_ips   = ["0.0.0.0/0"] # TODO: Whitelist public IP addresses that will be used to access LB
     }
     frontend_ips = {
       "app1" = {
@@ -229,9 +229,9 @@ appgws = {
 # VM-SERIES
 
 vmseries_universal = {
-  version           = "10.2.901"
-  size              = "Standard_DS3_v2"
-  bootstrap_options = "type=dhcp-client"
+  version           = "11.2.0"
+  size              = "D3_v2"
+  bootstrap_options = "type=dhcp-client;dhcp-accept-server-hostname=yes;dns-primary=8.8.8.8;dns-secondary=4.2.2.2;panorama-server=1.1.1.1;tplname=azure-stack;dgname=azure"
 }
 
 vmseries = {
