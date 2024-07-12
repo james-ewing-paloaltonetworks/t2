@@ -230,7 +230,7 @@ appgws = {
 
 vmseries_universal = {
   version           = "11.2.0"
-  size              = "Standard_D8lds_v5"
+  size              = "Standard_D3_v2"
   bootstrap_options = "type=dhcp-client;dhcp-accept-server-hostname=yes;dns-primary=8.8.8.8;dns-secondary=4.2.2.2;panorama-server=1.1.1.1;tplname=azure-stack;dgname=azure"
 }
 
@@ -265,7 +265,7 @@ vmseries = {
     name     = "firewall02"
     vnet_key = "transit"
     virtual_machine = {
-      zone = 2
+      zone = 1
     }
     interfaces = [
       {
