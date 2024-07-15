@@ -230,7 +230,7 @@ appgws = {
 
 vmseries_universal = {
   version           = "11.1.2"
-  size              = "Standard_D3_v2"
+  size              = "Standard_D4_v2"
   bootstrap_options = "type=dhcp-client;dhcp-accept-server-hostname=yes;dns-primary=8.8.8.8;dns-secondary=4.2.2.2;panorama-server=management.panlab.io;tplname=azure-stack;dgname=azure;vm-auth-key=837325232412473"
 }
 
