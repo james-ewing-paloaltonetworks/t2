@@ -1,8 +1,8 @@
 # GENERAL
 
-region              = "South Central US"
+region              = "Central US"
 resource_group_name = "transit-vnet-common"
-name_prefix         = "example-"
+name_prefix         = "jondavis-"
 tags = {
   "CreatedBy"     = "Palo Alto Networks"
   "CreatedWith"   = "Terraform"
@@ -319,7 +319,7 @@ test_infrastructure = {
                 direction                  = "Inbound"
                 access                     = "Allow"
                 protocol                   = "Tcp"
-                source_address_prefixes    = ["1.1.1.1/32"] # TODO: Whitelist public IP addresses that will be used to access test infrastructure
+                source_address_prefixes    = ["0.0.0.0/0"] # TODO: Whitelist public IP addresses that will be used to access test infrastructure
                 source_port_range          = "*"
                 destination_address_prefix = "10.100.0.0/25"
                 destination_port_ranges    = ["80", "443"]
@@ -396,7 +396,7 @@ test_infrastructure = {
                 direction                  = "Inbound"
                 access                     = "Allow"
                 protocol                   = "Tcp"
-                source_address_prefixes    = ["1.1.1.1/32"] # TODO: Whitelist public IP addresses that will be used to access test infrastructure
+                source_address_prefixes    = ["0.0.0.0/0"] # TODO: Whitelist public IP addresses that will be used to access test infrastructure
                 source_port_range          = "*"
                 destination_address_prefix = "10.100.1.0/25"
                 destination_port_ranges    = ["80", "443"]
