@@ -1,8 +1,9 @@
 # GENERAL
 
-region              = "Central US"
+region              = "East US 2"
+#region              = "Canada Central"
 resource_group_name = "transit-vnet-common"
-name_prefix         = "jondavis-"
+name_prefix         = "jwick-"
 tags = {
   "CreatedBy"     = "Palo Alto Networks"
   "CreatedWith"   = "Terraform"
