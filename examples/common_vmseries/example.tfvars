@@ -266,7 +266,7 @@ vmseries = {
     name     = "firewall02"
     vnet_key = "transit"
     virtual_machine = {
-      zone = 2
+      zone = 1
     }
     interfaces = [
       {
