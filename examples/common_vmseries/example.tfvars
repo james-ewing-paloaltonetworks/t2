@@ -230,9 +230,9 @@ appgws = {
 # VM-SERIES
 
 vmseries_universal = {
-  version           = "11.1.2"
+  version           = "11.2.4-h1"
   size              = "Standard_D3_v2"
-  bootstrap_options = "type=dhcp-client;dhcp-accept-server-hostname=yes;dns-primary=8.8.8.8;dns-secondary=4.2.2.2;panorama-server=52.228.184.171;tplname=azure-stack;dgname=azure;vm-auth-key=837325232412473"
+  bootstrap_options = "type=dhcp-client;dhcp-accept-server-hostname=yes;dns-primary=8.8.8.8;dns-secondary=4.2.2.2;panorama-server=52.228.184.171;tplname=azure-stack;dgname=azure;authcodes=123456;vm-auth-key=837325232412423"
 }
 
 vmseries = {
