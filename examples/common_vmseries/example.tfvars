@@ -36,6 +36,9 @@ vnets = {
       "public" = {
         name = "public-nsg"
       }
+      "cngfw" = {
+        name = "cngfw-nsg"
+      }
     }
     route_tables = {
       "management" = {
@@ -122,6 +125,16 @@ vnets = {
       "appgw" = {
         name             = "appgw-snet"
         address_prefixes = ["10.0.0.48/28"]
+      }
+      "cngfw-public" = {
+        name             = "cngfw-public-snet"
+        network_security_group_key = "cngfw"
+        address_prefixes = ["10.0.1.0/24"]
+      }
+      "cngfw-private" = {
+        name             = "cngfw-private-snet"
+        network_security_group_key = "cngfw"
+        address_prefixes = ["10.0.2.0/24"]
       }
     }
   }
