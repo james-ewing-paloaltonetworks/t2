@@ -38,8 +38,20 @@ vnets = {
       }
       "cngfw" = {
         name = "cngfw-nsg"
+        rules = {
+              cngfw-vnet-inbound = {
+                name                       = "cngfw-allow-all"
+                priority                   = 100
+                direction                  = "Inbound"
+                access                     = "Allow"
+                protocol                   = "Tcp"
+                source_address_prefix      = ["0.0.0.0/0"]
+                source_port_range          = "*"
+                destination_address_prefix = "*"
+                destination_port_range     = "*"
+          }
+        }
       }
-    }
     route_tables = {
       "management" = {
         name = "mgmt-rt"
@@ -99,6 +111,23 @@ vnets = {
             name           = "private-blackhole-udr"
             address_prefix = "10.0.0.16/28"
             next_hop_type  = "None"
+          }
+        }
+      }
+      "cngfw-app-gw" = {
+        name = "cngfw-app-gw-rt"
+        routes = {
+          "spoke1" = {
+            name           = "spoke1-udr"
+            address_prefix = "10.100.0.0/25"
+            next_hop_type       = "VirtualAppliance"
+            next_hop_ip_address = "10.0.2.4"
+          }
+          "spoke2" = {
+            name           = "spoke2-udr"
+            address_prefix      = "10.100.1.0/25"
+            next_hop_type       = "VirtualAppliance"
+            next_hop_ip_address = "10.0.2.4"
           }
         }
       }
