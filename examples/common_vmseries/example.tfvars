@@ -45,13 +45,14 @@ vnets = {
                 direction                  = "Inbound"
                 access                     = "Allow"
                 protocol                   = "Tcp"
-                source_address_prefix      = ["0.0.0.0/0"]
+                source_address_prefixes    = ["0.0.0.0/0"]
                 source_port_range          = "*"
                 destination_address_prefix = "*"
                 destination_port_range     = "*"
           }
         }
       }
+     }
     route_tables = {
       "management" = {
         name = "mgmt-rt"
