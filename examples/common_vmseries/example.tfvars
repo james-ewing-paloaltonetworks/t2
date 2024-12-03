@@ -178,6 +178,19 @@ vnet_peerings = {
   # }
 }
 
+natgws = {
+  "natgw" = {
+    name        = "public-natgw"
+    vnet_key    = "transit"
+    subnet_keys = ["public", "management"]
+    public_ip_prefix = {
+      create = true
+      name   = "public-natgw-ippre"
+      length = 29
+    }
+  }
+}
+
 # LOAD BALANCING
 
 load_balancers = {
@@ -289,7 +302,7 @@ vmseries = {
       {
         name             = "vm01-mgmt"
         subnet_key       = "management"
-        create_public_ip = true
+        create_public_ip = false
       },
       {
         name              = "vm01-private"
@@ -299,7 +312,7 @@ vmseries = {
       {
         name                    = "vm01-public"
         subnet_key              = "public"
-        create_public_ip        = true
+        create_public_ip        = false
         load_balancer_key       = "public"
         application_gateway_key = "public"
       }
@@ -315,7 +328,7 @@ vmseries = {
       {
         name             = "vm02-mgmt"
         subnet_key       = "management"
-        create_public_ip = true
+        create_public_ip = false
       },
       {
         name              = "vm02-private"
@@ -325,7 +338,7 @@ vmseries = {
       {
         name                    = "vm02-public"
         subnet_key              = "public"
-        create_public_ip        = true
+        create_public_ip        = false
         load_balancer_key       = "public"
         application_gateway_key = "public"
       }
