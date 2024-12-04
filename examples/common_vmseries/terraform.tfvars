@@ -178,18 +178,18 @@ vnet_peerings = {
   # }
 }
 
-natgws = {
-  "natgw" = {
-    name        = "public-natgw"
-    vnet_key    = "transit"
-    subnet_keys = ["public", "management"]
-    public_ip_prefix = {
-      create = true
-      name   = "public-natgw-ippre"
-      length = 29
-    }
-  }
-}
+#natgws = {
+#  "natgw" = {
+#    name        = "public-natgw"
+#   vnet_key    = "transit"
+#    subnet_keys = ["public", "management"]
+#    public_ip_prefix = {
+#      create = true
+#      name   = "public-natgw-ippre"
+#      length = 29
+#    }
+#  }
+#}
 
 # LOAD BALANCING
 
@@ -286,7 +286,7 @@ appgws = {
 # VM-SERIES
 
 vmseries_universal = {
-  version           = "11.2.0"
+  version           = "11.2.3"
   size              = "Standard_D3_v2"
   bootstrap_options = "panorama-server=52.228.184.171;authcodes=D3047626;vm-auth-key=634384168328837;type=dhcp-client;dhcp-accept-server-hostname=yes;dns-primary=8.8.8.8;dns-secondary=4.2.2.2;tplname=azure-stack;dgname=azure"
 }
@@ -302,7 +302,7 @@ vmseries = {
       {
         name             = "vm01-mgmt"
         subnet_key       = "management"
-        create_public_ip = false
+        create_public_ip = true
       },
       {
         name              = "vm01-private"
@@ -312,7 +312,7 @@ vmseries = {
       {
         name                    = "vm01-public"
         subnet_key              = "public"
-        create_public_ip        = false
+        create_public_ip        = true
         load_balancer_key       = "public"
         application_gateway_key = "public"
       }
@@ -328,7 +328,7 @@ vmseries = {
       {
         name             = "vm02-mgmt"
         subnet_key       = "management"
-        create_public_ip = false
+        create_public_ip = true
       },
       {
         name              = "vm02-private"
@@ -338,7 +338,7 @@ vmseries = {
       {
         name                    = "vm02-public"
         subnet_key              = "public"
-        create_public_ip        = false
+        create_public_ip        = true
         load_balancer_key       = "public"
         application_gateway_key = "public"
       }
