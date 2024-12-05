@@ -395,6 +395,12 @@ test_infrastructure = {
                 next_hop_type       = "VirtualAppliance"
                 next_hop_ip_address = "10.0.0.30"
               }
+              "toAppGW" = {
+                name                = "toAppGW-udr"
+                address_prefix      = "10.0.0.48/28"
+                next_hop_type       = "VirtualAppliance"
+                next_hop_ip_address = "10.0.2.4"
+              }
             }
           }
         }
@@ -471,6 +477,12 @@ test_infrastructure = {
                 address_prefix      = "0.0.0.0/0"
                 next_hop_type       = "VirtualAppliance"
                 next_hop_ip_address = "10.0.0.30"
+              }
+              "toAppGW" = {
+                name                = "toAppGW-udr"
+                address_prefix      = "10.0.0.48/28"
+                next_hop_type       = "VirtualAppliance"
+                next_hop_ip_address = "10.0.2.4"
               }
             }
           }
