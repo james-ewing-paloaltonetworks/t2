@@ -155,11 +155,7 @@ vnets = {
       "appgw" = {
         name             = "appgw-snet"
         address_prefixes = ["10.0.0.48/28"]
-      }
-      "cngfw-appgw" = {
-        name             = "cngfw-appgw-snet"
-        address_prefixes = ["10.0.3.0/24"]
-        route_table_key            = "cngfw-app-gw"
+        route_table_key  = "cngfw-app-gw"
       }
       "cngfw-public" = {
         name             = "cngfw-public-snet"
