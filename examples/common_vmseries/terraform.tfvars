@@ -1,13 +1,14 @@
 # GENERAL
 
-#region              = "East US 2"
-region              = "Canada Central"
+region              = "East US 2"
+#region              = "Canada Central"
 resource_group_name = "transit-vnet-common"
-name_prefix         = "jwick-"
+name_prefix         = "jewing-"
 tags = {
   "CreatedBy"     = "Palo Alto Networks"
   "CreatedWith"   = "Terraform"
   "xdr-exclusion" = "yes"
+  "Owner"         = "jewing"
 }
 
 # NETWORK
@@ -289,7 +290,19 @@ appgws = {
 vmseries_universal = {
   version           = "11.2.303"
   size              = "Standard_D3_v2"
-  bootstrap_options = "panorama-server=52.228.184.171;authcodes=D3047626;vm-auth-key=634384168328837;type=dhcp-client;dhcp-accept-server-hostname=yes;dns-primary=8.8.8.8;dns-secondary=4.2.2.2;tplname=azure-stack;dgname=azure"
+  bootstrap_options = <<-EOT
+    panorama-server=20.81.140.204
+    authcodes=D9982921
+    vm-auth-key=160496345697491
+    vm-series-auto-registration-pin-id=20502c6f-70c4-45e2-a188-b032414dc60b
+    vm-series-auto-registration-pin-value=98d90db5e00c4969bfd6ed42db81419e
+    type=dhcp-client
+    dhcp-accept-server-hostname=yes
+    dns-primary=8.8.8.8
+    dns-secondary=4.2.2.2;
+    tplname=azure-stack
+    dgname=azure
+    EOT
 }
 
 vmseries = {
