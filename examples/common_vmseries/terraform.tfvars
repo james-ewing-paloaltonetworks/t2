@@ -299,7 +299,8 @@ vmseries_universal = {
     type=dhcp-client
     dhcp-accept-server-hostname=yes
     dns-primary=8.8.8.8
-    dns-secondary=4.2.2.2;
+    dns-secondary=4.2.2.2
+    ntp=pool.ntp.org
     tplname=azure-stack
     dgname=azure
     EOT
