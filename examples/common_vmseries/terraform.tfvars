@@ -301,8 +301,8 @@ vmseries_universal = {
     dns-primary=8.8.8.8
     dns-secondary=4.2.2.2
     ntp-primary=pool.ntp.org
-    tplname=azure-stack
-    dgname=azure
+    tplname=jewingvfw_stack
+    dgname=jewingvfw
     EOT
 }
 
