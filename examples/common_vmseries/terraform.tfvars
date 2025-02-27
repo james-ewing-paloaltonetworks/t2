@@ -294,15 +294,14 @@ vmseries_universal = {
     panorama-server=20.81.140.204
     authcodes=D9982921
     vm-auth-key=160496345697491
-    vm-series-auto-registration-pin-id=20502c6f-70c4-45e2-a188-b032414dc60b
-    vm-series-auto-registration-pin-value=98d90db5e00c4969bfd6ed42db81419e
     type=dhcp-client
     dhcp-accept-server-hostname=yes
     dns-primary=8.8.8.8
     dns-secondary=4.2.2.2
-    ntp-primary=pool.ntp.org
     tplname=jewingvfw_stack
     dgname=jewingvfw
+    vm-series-auto-registration-pin-id=20502c6f-70c4-45e2-a188-b032414dc60b
+    vm-series-auto-registration-pin-value=98d90db5e00c4969bfd6ed42db81419e
     EOT
 }
 
