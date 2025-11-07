@@ -2,7 +2,7 @@
 
 region              = "East US 2"
 #region              = "Canada Central"
-resource_group_name = "transit-vnet-common"
+resource_group_name = "transit-vnet"
 name_prefix         = "jewing-"
 tags = {
   "CreatedBy"     = "Palo Alto Networks"
